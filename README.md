@@ -1,1 +1,1 @@
-# Azure-ARM-Archotecture
+# Azure-ARM-Architecture
