@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "functions": [],
+  "variables": {},
+  "resources": [
+    {
+      "name": "VS-Vnet",
+      "type": "Microsoft.Network/virtualNetworks",
+      "apiVersion": "2020-11-01",
+      "location": "[resourceGroup().location]",
+      "tags": {
+        "displayName": "VS-Vnet"
+      },
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "10.0.0.0/16"
+          ]
+        },
+        "subnets": [
+          {
+            "name": "VS-Subnet0",
+            "properties": {
+              "addressPrefix": "10.0.0.0/24"
+            }
+          },
+          {
+            "name": "VS-Subnet1",
+            "properties": {
+              "addressPrefix": "10.0.1.0/24"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "outputs": {}
+}
